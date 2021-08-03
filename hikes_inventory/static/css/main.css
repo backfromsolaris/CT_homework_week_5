@@ -1,0 +1,66 @@
+/* Nav Styles */
+.ct-nav{
+    display: flex;
+    justify-content: center;
+}
+
+/* Logo Image */
+.ct-nav img{
+    width: 25%;
+    max-width: 100%;
+    margin-left: 9vw;
+    padding-top: 4vh;
+}
+
+#horizontal-list{
+    min-width: 75vw;
+    list-style: none;
+    padding-top: 3vw;
+}
+
+#horizontal-list li, #horizontal-list a{
+    display: inline;
+    text-decoration: none;
+    padding: 0.75vw;
+    color: black;
+}
+
+#header-text{
+    padding-top: 15vh;
+}
+
+#header-text h5{
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+}
+
+.header-image{
+    width: 25vw;
+    padding-top: 7vh;
+    margin-left: 5vw;
+}
+
+.row{
+    justify-content: center;
+}
+
+#center-text{
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.tattler-img{
+    width: 80vw;
+    max-width: 100%;
+    padding-top: 5vh;
+}
+
+#footer div{
+    padding-top: 15vh;
+    justify-content: center;
+    text-align: center;
+}
+
+#footer h4{
+    padding-bottom: 5vh;
+}
