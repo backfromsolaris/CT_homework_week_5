@@ -10,7 +10,7 @@ auth = Blueprint('auth', __name__, template_folder='auth_templates')
 def signup():
     # instantiation of class created in forms.py, to be referenced in html as 'form'
     form = UserForm()
-    if request.method == 'POST':
+    if request.method == 'POST' and form.validate_on_submit():
         email = form.email.data
         password = form.password.data
         print([email, password])
