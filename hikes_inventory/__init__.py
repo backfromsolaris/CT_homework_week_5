@@ -7,6 +7,8 @@
 from flask import Flask
 from config import Config
 from .authentication.routes import auth
+from flask_migrate import Migrate
+from .models import db
 
 # importing blueprint as var site, register blueprint below
 # whenever grabbing anything from entire flask inv specifically blueprints, 
@@ -25,3 +27,9 @@ app.config.from_object(Config)
 # registering blueprint as denoted above
 app.register_blueprint(site)
 app.register_blueprint(auth)
+
+db.init_app(app)
+
+migrate = Migrate(app, db)
+
+from .models import User
