@@ -13,3 +13,11 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # "hey, this is where this file is in my computer"
 #  - done every time we make a Flask application.
 
+
+
+class Config:
+    """
+    Sets configuration variables for our Flask app here
+    Eventually will use hidden variable items - but for now, we'll leave them exposed in config
+    """
+    SECRET_KEY = "12345"

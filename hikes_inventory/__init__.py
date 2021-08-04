@@ -5,7 +5,8 @@
 # instantiate this as my entire application
 
 from flask import Flask
-# from config import Config
+from config import Config
+from .authentication.routes import auth
 
 # importing blueprint as var site, register blueprint below
 # whenever grabbing anything from entire flask inv specifically blueprints, 
@@ -18,7 +19,9 @@ from .site.routes import site
 # __name__ takes on the directory it is inside of
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 
 # registering blueprint as denoted above
 app.register_blueprint(site)
+app.register_blueprint(auth)
