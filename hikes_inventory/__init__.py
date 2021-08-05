@@ -9,6 +9,7 @@ from config import Config
 from .authentication.routes import auth
 from flask_migrate import Migrate
 from .models import db, login_manager
+from .api.routes import api
 
 # importing blueprint as var site, register blueprint below
 # whenever grabbing anything from entire flask inv specifically blueprints, 
@@ -22,6 +23,7 @@ from .site.routes import site
 
 app = Flask(__name__)
 app.config.from_object(Config)
+app.register_blueprint(api)
 
 
 # registering blueprint as denoted above
