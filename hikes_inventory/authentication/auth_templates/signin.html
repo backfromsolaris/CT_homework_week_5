@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- auth failed flash -->
 
-<h1>Sign in Page goes here</h1>
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+        {% for cat, msg in messages %}
+            {% if cat == 'auth-failed' %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <!-- variables stored in py must be in double curly brackets -->
+                    {{ msg }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
+<h2>Sign In to Your Account</h2>
+    {% include 'form.html' %}
 {% endblock content %}

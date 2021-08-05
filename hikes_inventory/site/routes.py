@@ -2,6 +2,7 @@
 # below, registers the location of the blueprint
 # method render_template helps to render html; gives a way to serve up html
 from flask import Blueprint, render_template
+from flask_login import login_required
 
 
 
@@ -26,3 +27,8 @@ def home():
     # where is my template at?'
     # 
     return render_template('index.html')
+
+@site.route('/profile')
+@login_required
+def profile():
+    return render_template('profile.html')

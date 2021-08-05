@@ -8,7 +8,7 @@ from flask import Flask
 from config import Config
 from .authentication.routes import auth
 from flask_migrate import Migrate
-from .models import db
+from .models import db, login_manager
 
 # importing blueprint as var site, register blueprint below
 # whenever grabbing anything from entire flask inv specifically blueprints, 
@@ -29,6 +29,10 @@ app.register_blueprint(site)
 app.register_blueprint(auth)
 
 db.init_app(app)
+
+login_manager.init_app(app)
+
+login_manager.login_view = 'auth.signin' #Specify what page to load for NON AUTH users
 
 migrate = Migrate(app, db)
 
