@@ -46,3 +46,18 @@ class User(db.Model, UserMixin):
 
     def set_token(self, length):
         return secrets.token_hex(length)
+
+class Hike(db.Model):
+    id = db.Column(db.String, primary_key = True)
+    hike_name = db.Column(db.String(150))
+    country = db.Column(db.String(100))
+    district = db.Column(db.String(100))
+    city = db.Column(db.String(100))
+    coordinates = db.Column(db.String(30), nullable = True)
+    length = db.Column(db.Numeric(6.2))
+    elevation_gain = db.Column(db.Numeric(5), nullable = True)
+    hike_type = db.Column(db.String(50))
+    difficulty = db.Column(db.String(30))
+    parking = db.Column(db.Boolean, nullable = True)
+    user_token = db.Column(db.String, db.ForeignKey('user.token', nullable = False))
+
